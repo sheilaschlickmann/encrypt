@@ -20,14 +20,14 @@ public class EncryptController {
     }
     @PostMapping
     public ResponseEntity<Object> saveEncrypt(@RequestBody EncryptModel encryptModel) {
-        encryptModel.setSenha(CaesarCipher.encryptData(encryptModel.getSenha(),7));
+        encryptModel.setSenha(CaesarCipher.encrypt(encryptModel.getSenha(),7));
         return ResponseEntity.status(HttpStatus.CREATED).body(encryptService.save((encryptModel)));
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Object> getEncrypt(@PathVariable(value = "id") UUID id) {
         Optional<EncryptModel> encryptModelOptional = encryptService.findById(id);
-        System.out.println(CaesarCipher.decryptData(encryptModelOptional.get().getSenha(),7));
+        System.out.println(CaesarCipher.decrypt(encryptModelOptional.get().getSenha(),7));
         return ResponseEntity.status(HttpStatus.OK).body(encryptModelOptional.get());
     }
 

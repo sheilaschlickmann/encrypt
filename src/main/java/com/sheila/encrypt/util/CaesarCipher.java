@@ -2,7 +2,7 @@ package com.sheila.encrypt.util;
 
 public class CaesarCipher {
     public static final String ALPHABET = "abcdefghijklmnopqrstuvwxyz";
-    public static String encryptData(String password, int key ) {
+    public static String encrypt(String password, int key ) {
 
         password = password.toLowerCase();
         String encryptPass = "";
@@ -21,7 +21,7 @@ public class CaesarCipher {
 
     }
 
-    public static String decryptData(String password, int key) {
+    public static String decrypt(String password, int key) {
 
         password = password.toLowerCase();
 
