@@ -11,7 +11,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/encrypt")
+@RequestMapping("/encrypt-supremo")
 public class EncryptController {
     final EncryptService encryptService;
 
